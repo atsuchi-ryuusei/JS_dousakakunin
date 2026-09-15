@@ -11,8 +11,17 @@ hamburger.addEventListener('click', function(){
     nav.classList.toggle('is-active');
 });
 
-// header contactのスクロールアニメーション
-
+// header リンククリック時の動作
+// 1.定数 a要素の取得
+const navLinks = document.querySelectorAll('.p-global-nav a');
+// 2.動作
+navLinks.forEach(function(link){
+    link.addEventListener('click', function() {
+        document.body.classList.remove('is-active');
+        hamburger.classList.remove('is-active');
+        nav.classList.remove('is-active');
+    });
+});
 
 // footer メールアドレスのコピーボタン
 // 1.定数の宣言
