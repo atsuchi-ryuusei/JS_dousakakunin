@@ -1,0 +1,680 @@
+@charset "UTF-8";
+
+/* base↓ */
+:root {
+    --bg-color: #f0f4f7; /*背景色*/
+    --text-color: #333c4d; /*文字色*/
+    --accent-color: #4a3d52; /*メインカラー*/
+    --color-cert: #6c5b7b; /*skill 資格色*/
+    --color-learn: #b08968; /*skill 学習中色*/
+    --bg-learn: rgba(212, 163, 115, 0.15); /*skill 学習色の背景色*/
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/*--body--*/
+.l-page {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+.l-page a {
+    text-decoration: none;
+    color: inherit;
+}
+.l-page a:hover {
+    opacity: 0.5;
+}
+
+/*--header--*/
+.p-header {
+    padding: 1em 2em;
+    background-color: var(--accent-color);
+    color: #c0c6c9;
+}
+.p-header__inner {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    margin: 0 auto;
+}
+.p-header__title {
+    margin: auto 0;
+}
+.hamburger-icon {
+    display: none;
+}
+
+.p-global-nav {
+    margin: 0 1em;
+}
+.p-global-nav ul {
+    display: flex;
+    gap: 1em;
+    padding: 0;
+    list-style: none;
+    font-size: 1.5em;
+}
+.p-global-nav__ja {
+    display: none;
+}
+
+/*--main--*/
+.l-main {
+    max-width: 1200px;
+    width: 100%;
+    margin: 5em auto;
+}
+article {
+    text-align: center;
+    padding: 2em 0;
+}
+.l-main-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.l-section-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2em 0;
+}
+.l-section-container + .l-section-container {
+    margin-top: 100px;
+}
+.l-section-padding {
+    padding: 2em 5%;
+}
+.p-section {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(46, 54, 61, 0.06);
+    border: 1px solid #eeeeee;
+}
+a.c-btn {
+    display: inline-block !important;
+    cursor: pointer;
+    background-color: var(--accent-color);
+    border: #eeeeee solid 2px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 10px 50px;
+    border-radius: 50vh;
+}
+a.c-btn:hover {
+    background-color: #ffffff;
+    color: var(--text-color);
+    border: var(--accent-color) solid 2px;
+    opacity: 1;
+}
+.p-top-link {
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 5px 20px;
+    border: var(--accent-color) solid 2px;
+    border-radius: 50vh;
+    text-decoration: none;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+.p-top-link:hover {
+    background-color: #ffffff;
+    color: var(--text-color);
+    border: var(--accent-color) solid 2px;
+}
+.p-top-link a:hover {
+    opacity: 1;
+}
+/*--footer--*/
+.l-footer {
+    text-align: center;
+}
+.p-footer {
+    background-color: var(--accent-color);
+    color: #f0f4f7;
+}
+.l-footer h2 {
+    margin-top: 0;
+    margin-bottom: 1em;
+    padding-top: 2em;
+}
+.p-mailaddress {
+    font-size: 2em;
+    margin: 0;
+    margin-bottom: 0.5em;
+}
+.p-mailaddress a {
+    transition: opacity 0.3s;
+}
+.p-mailaddress a:hover {
+    opacity: 0.6;
+
+}
+.c-btn-copy {
+    cursor: pointer;
+    background-color: #f0f4f7;
+    color: #4a3d52;
+    transition: all 0.3s;
+    border-radius: 0.5em;
+    border: 2px solid transparent;
+    width: 5em;
+    height: 3em;
+}
+.c-btn-copy:hover {
+    background-color: #4a3d52;
+    color: #f0f4f7;
+    border-radius: 0.5em;
+    border: #f0f4f7 solid 2px;
+}
+.c-btn-copy.is-copied {
+    background-color: #4a3d52;
+    color: #f0f4f7;
+    border-radius: 0.5em;
+    border: #f0f4f7 solid 2px;
+}
+.c-btn-copy__text::before {
+    content: "Copy";
+}
+.c-btn-copy.is-copied .c-btn-copy__text::before {
+    content: "Copied!";
+}
+.c-copyright {
+    color: #c0c6c9;
+    margin-top: 2em;
+}
+
+/* index.html */
+.p-more-link {
+    margin: 0 auto;
+}
+
+/*--hero--*/
+.l-hero {
+    margin: 0 auto 3em auto;
+    filter: brightness(1.1);
+    width: 90%;
+    max-width: 1200px;
+
+}
+.p-hero__image {
+    border-radius: 20px;
+}
+
+/*--about-me--*/
+.l-about-me--flex {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1em;
+}
+.p-about-me__image {
+    border-radius: 50%;
+    width: 20%;
+    height: 20%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+.p-about-me__text {
+    width: 70%;
+}
+.p-about-me__text h3 {
+    text-align: left;
+}
+.p-about-me__text p {
+    text-align: left;
+}
+/*--skill--*/
+.l-skills-card--grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5em;
+}
+.l-skills-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1em;
+    padding: 0 1em;
+}
+.l-skills-card h4{
+    margin: 1em 0;
+}
+.p-skills-card {
+    border: var(--accent-color) solid 2px;
+    border-radius: 8px;
+}
+.p-skills-card__icon {
+    color: var(--accent-color);
+    stroke-width: 1.5;
+    width: 2em;
+    height: 2em;
+    margin: auto 0;
+}
+.p-skills-card__title--small {
+    font-size: 12px;
+}
+.c-badge {
+    cursor: default;
+    margin: auto 0;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.01em;
+}
+.c-badge--certified p {
+    background-color: transparent;
+    color: #6c5b7b;
+    border: 1px solid var(--color-cert);
+    padding: 1px 5px;
+    border-radius: 50vh;
+    width: fit-content;
+}
+.c-badge--learning p {
+    background-color: var(--bg-learn);
+    color: var(--color-learn);
+    border: 1px solid var(--color-learn);
+    padding: 1px 5px;
+    border-radius: 50vh;
+    width: fit-content;
+}
+/*--works--*/
+.l-works--grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 1em;
+}
+.l-works-card {
+    margin: 0 auto 1.5em;
+}
+.l-works-card__image {
+    width: 100%;
+    aspect-ratio: 1 / 1.414;
+    object-fit: cover;
+    object-position: top;
+}
+.p-works-card__image {
+    border-radius: 8px;
+    border: 1px solid var(--accent-color);
+}
+.p-works-card__title {
+    margin-bottom: 0.3em;
+}
+.l-works-card time {
+    display: block;
+}
+.p-works-card__more {
+    color: var(--accent-color);
+    position: relative;
+    display: inline-block;
+    padding: 2px 10px;
+    font-size: 18px;
+}
+.p-works-card__more::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--accent-color);
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+.p-works-card__more:hover::after {
+    transform: scaleX(1);
+    opacity: 0.7;
+}
+
+/* profile.html */
+/*--about-me--*/
+/*--profile-index--*/
+.l-profile-index__list {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0;
+}
+.p-profile-index__list {
+    font-size: 20px;
+}
+.p-profile-index__item {
+    color: var(--accent-color);
+    position: relative;
+    text-align: left;
+}
+.p-profile-index__item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--accent-color);
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+.p-profile-index__item:hover::after {
+    transform: scaleX(1);
+    opacity: 0.7;
+}
+.p-profile-index__item p {
+    margin: 0.5em 0;
+}
+
+/*--profile-chapter--*/
+.l-profile-chapter-container {
+    margin: 0 5em;
+}
+.l-profile-chapter-container + .l-profile-chapter-container {
+    margin-top: 2em;
+}
+.l-profile-chapter__title {
+    text-align: left;
+}
+.p-profile-chapter__title {
+    border-bottom: var(--accent-color) solid 3px;
+}
+.p-profile-chapter__text {
+    text-align: left;
+}
+.l-profile-chapter__btn {
+    text-align: right;
+}
+.p-profile-chapter__btn {
+    font-size: small;
+
+    color: var(--accent-color);
+    position: relative;
+}
+.p-profile-chapter__btn::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--accent-color);
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+.p-profile-chapter__btn:hover::after{
+    transform: scaleX(1);
+    opacity: 0.7;
+}
+.p-profile-chapter__btn__icon {
+    width: 1.3em;
+    height: auto;
+    margin: 0 auto -4px auto;
+}
+/*--skills--*/
+.l-profile-skills {
+    margin: 0 5em;
+}
+.l-skills-card--column .l-skills-card + .l-skills-card {
+    margin-top: 1.5em;
+}
+.l-skills-card__meta {
+    width: 100%;
+}
+.p-skills-card__meta {
+    border-top: var(--accent-color) dotted 3px;
+}
+.l-skills-card__meta-text {
+    margin: 1em 2em;
+    text-align: left;
+    position: relative;
+    padding-left: 1.2em;
+}
+.p-skills-card__meta-text {
+    font-size: 0.85em;
+}
+.p-skills-card__meta-text--certified {
+    font-style: italic;
+    letter-spacing: 0.02em;
+}
+.p-skills-card__meta-text--certified::before {
+    content: "・";
+    position: absolute;
+    left: 0;
+    color: var(--color-cert);
+}
+.p-skills-card__meta-text--learning {
+    line-height: 1.6;
+}
+.p-skills-card__meta-text--learning::before {
+    content: "■";
+    position: absolute;
+    left: 0;
+    color: var(--color-learn);
+}
+
+/* project */
+/*--画像--*/
+.l-project-visual--grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    padding: 0 1em;
+}
+.l-project-visual-card p {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.l-project-visual {
+    width: 100%;
+    aspect-ratio: 1 / 1.414;
+    object-fit: cover;
+    object-position: top;
+}
+.p-project-visual {
+    border-radius: 8px;
+    border: 1px solid var(--accent-color);
+}
+
+/*--テキスト--*/
+.l-project-info {
+    text-align: left;
+    margin: 0 5%;
+    padding: 0 5em;
+}
+
+/*--タイトル--*/
+.l-project__title {
+    margin: 1em;
+    padding: 0;
+    padding-left: 3em;
+}
+.p-project__title {
+    font-size: 2em;
+    font-weight: bold;
+    border-bottom: var(--accent-color) solid 5px;
+}
+
+.l-project-meta__title {
+    margin: 0 auto;
+}
+.l-project-meta__text {
+    margin: 0 auto;
+}
+.l-project-meta__title + .l-project-meta__text {
+    margin-bottom: 1em;
+}
+.l-project-meta + .l-project-context {
+    margin-top: 2em;
+}
+/*--meta--*/
+.p-project-meta__time {
+    font-style: italic;
+    letter-spacing: 0.02em;
+}
+.p-project-link {
+    color: var(--accent-color);
+    position: relative;
+    word-break: break-all;
+}
+.p-project-link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--accent-color);
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+.p-project-link:hover::after{
+    transform: scaleX(1);
+    opacity: 0.5;
+}
+.p-project-link__icon {
+    width: 1.3em;
+    height: 1.3em;
+    margin-bottom: -4px;
+}
+/*--context--*/
+.l-project-context__list {
+    padding-inline-start: 30px;
+}
+ul.p-project-context__list li.p-project-context__text::marker {
+    font-size: small;
+}
+.l-project-context__text {
+    margin-bottom: 0.5em !important;
+}
+.l-project-context-container + .l-project-context-container {
+    margin-top: 1em;
+}
+/*--back--*/
+.p-back-link {
+    margin-top: 100px;
+}
+.p-back-link__icon {
+    margin-right: 3px;
+    margin-bottom: -4px;
+}
+
+@media screen and (max-width: 768px) {
+    /* header */
+    .p-header {
+        padding: 2em;
+    }
+    /*ハンバーガーアイコン*/
+    .hamburger-icon {
+        display: inline-block;
+        width: 50px;
+        height: 44px;
+        position: relative;
+        z-index: 120;
+    }
+    .hamburger-icon span {
+        display: inline-block;
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background-color: #ffffff;
+        border-radius: 4px;
+        transition: all 0.4s ease;
+    }
+    .hamburger-icon span:nth-of-type(1) {
+        top: 0;
+    }
+    .hamburger-icon span:nth-of-type(2) {
+        top: 20px;
+    }
+    .hamburger-icon span:nth-of-type(3) {
+        bottom: 0;
+    }
+
+    /*ナビゲーション*/
+    .p-global-nav {
+        position: fixed;
+        top: 0; 
+        right: -100%; /* 画面外に */
+        width: 100%; /* 画面最大 */
+        height: 100vh; /* 画面最大 */
+        transition: right 0.4s ease; /* スライドするアニメーション */
+        margin: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        z-index: 110;
+    }
+    .p-global-nav ul {
+        display: block;
+        text-align: center;
+        font-size: 3rem;
+        letter-spacing: 0.1em;
+    }
+    /*.p-global-nav ul li {
+    }*/
+    .p-global-nav ul li a {
+        display: block;
+        padding: 1em 0;
+    }
+    .p-global-nav ul li a span {
+        display: block;
+    }
+    span.p-global-nav__en {
+        font-size: 3rem;
+    }
+    span.p-global-nav__ja {
+        display: block;
+        font-size: 1rem;
+        opacity: 0.7;
+    }
+
+    /* -- JS動作後 -- */
+    /* bodyのスクロール無効化 */
+    body.is-active {
+        overflow: hidden;
+    }
+    /* ハンバーガーメニュー */
+    .hamburger-icon.is-active span {
+        background-color: var(--accent-color);
+    } /*JSでnav全画面後に色変更*/
+    .hamburger-icon.is-active span:nth-of-type(1) {
+        transform: translateY(20px) rotate(45deg);
+    }
+    .hamburger-icon.is-active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    .hamburger-icon.is-active span:nth-of-type(3) {
+        transform: translateY(-20px) rotate(-45deg);
+    }
+    /* nav */
+    .p-global-nav.is-active {
+        right: 0;
+    }
+
+    /*--fotter--*/
+    .p-mailaddress {
+        font-size: 1.5rem;
+    }/*フッター メールアドレスのフォントサイズを小さく*/
+    /*index*/
+    /*--about-me--*/
+    .p-about-me__image {
+        width: 140px;
+    }/*about-meの近影サイズを以降固定に*/
+
+    /*--skill--*/
+    .l-skills-card--grid {
+        grid-template-columns: 1fr;
+    }/*index.htmlのskillsを1列に*/
+}
