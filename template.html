@@ -40,21 +40,18 @@
             </nav>
         </div>
     </header>
-    <main class="l-main p-main">
-        <article class="l-main-container p-main-container">
-            <section >
-                
-            </section>
-            <div class="p-top-link">
-                <a href="#header" class="c-btn-top">Page Top</a>
-            </div>
-        </article>
+    <main class="l-main">
+        <section class="l-section-container p-section">
+            
+        </section>
+        <a href="#header" class="c-btn-top" aria-label="ページ上部へ戻る"><i data-lucide="chevron-up" class="p-pageTop"></i></a>
     </main>
-    <footer class="l-footer p-footer">
-        <h2 id="contact">Contact</h2>
-        <p class="p-mailaddress"><a href="mailto:atsuchi.ryuusei@gmail.com">atsuchi.ryuusei&commat;gmail.com</a></p>
-        <button id="copy-btn" class="c-btn-copy js-copy-trigger" aria-label="メールアドレスをコピー">
-            <span class="c-btn-copy__text" aria-hidden="true"></span>
+    <footer class="l-footer">
+        <h2 class="p-footer__title" id="contact">Contact</h2>
+        <button type="button" class="c-btn-mail" id="copyMail" aria-label="メールアドレスをコピー">
+            <span id="mailaddress">atsuchi.ryuusei&commat;gmail.com</span>
+            <i data-lucide="copy" class="p-mailCopy" id="copy-icon"></i>
+            <i data-lucide="circle-check-big" class="p-mailCheck" id="check-icon"></i>
         </button>
         <div class="c-copyright"><small>&copy; 2026 Atsuchi Ryuusei</small></div>
     </footer>

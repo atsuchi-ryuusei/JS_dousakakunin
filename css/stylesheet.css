@@ -2,7 +2,7 @@
 
 /* base↓ */
 :root {
-    --bg-color: #f0f4f7; /*背景色*/
+    --bg-color: #f0f4f7; /*背景色, 白文字*/
     --text-color: #333c4d; /*文字色*/
     --accent-color: #4a3d52; /*メインカラー*/
     --color-cert: #6c5b7b; /*skill 資格色*/
@@ -18,11 +18,11 @@ html {
     background-color: var(--bg-color);
     color: var(--text-color);
 }
-.l-page a {
+a {
     text-decoration: none;
     color: inherit;
 }
-.l-page a:hover {
+a:hover {
     opacity: 0.5;
 }
 
@@ -30,7 +30,7 @@ html {
 .p-header {
     padding: 1em 2em;
     background-color: var(--accent-color);
-    color: #c0c6c9;
+    color: var(--bg-color);
 }
 .p-header__inner {
     max-width: 1200px;
@@ -62,31 +62,24 @@ html {
 }
 
 /*--main--*/
+/* main, section の余白、装飾 */
 .l-main {
     max-width: 1200px;
     width: 100%;
-    margin: 5em auto;
-}
-article {
+    margin: 5rem auto;
     text-align: center;
-    padding: 2em 0;
-}
-.l-main-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
 .l-section-container {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
-    padding: 2em 0;
-}
-.l-section-container + .l-section-container {
-    margin-top: 100px;
-}
-.l-section-padding {
     padding: 2em 5%;
+}
+.l-section-container.p-works {
+    padding: 2em 0;
 }
 .p-section {
     background-color: #ffffff;
@@ -94,8 +87,10 @@ article {
     box-shadow: 0 4px 12px rgba(46, 54, 61, 0.06);
     border: 1px solid #eeeeee;
 }
+
+/* more ボタン */
 a.c-btn {
-    display: inline-block !important;
+    display: inline-block;
     cursor: pointer;
     background-color: var(--accent-color);
     border: #eeeeee solid 2px;
@@ -111,98 +106,108 @@ a.c-btn:hover {
     border: var(--accent-color) solid 2px;
     opacity: 1;
 }
-.p-top-link {
-    cursor: pointer;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    background-color: var(--accent-color);
-    color: #ffffff;
-    padding: 5px 20px;
-    border: var(--accent-color) solid 2px;
-    border-radius: 50vh;
-    text-decoration: none;
+
+/* page-topボタン */
+.c-btn-top {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 100;
-    transition: all 0.3s ease;
+
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+
+    border: var(--accent-color) solid 3px;
+    border-radius: 50vh;
+    background-color: var(--accent-color);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.3s ease;
+    transform: translateY(20px);
 }
-.p-top-link:hover {
-    background-color: #ffffff;
-    color: var(--text-color);
-    border: var(--accent-color) solid 2px;
+.p-pageTop {
+    width: 2rem;
+    height: 2rem;
+    stroke-width: 3;
+    color: var(--bg-color);
 }
-.p-top-link a:hover {
+.c-btn-top:hover {
+    background-color: var(--bg-color);
     opacity: 1;
 }
+.c-btn-top:hover .p-pageTop {
+    color: var(--accent-color);
+}
+/* JS */
+.c-btn-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
 /*--footer--*/
 .l-footer {
     text-align: center;
-}
-.p-footer {
     background-color: var(--accent-color);
     color: #f0f4f7;
 }
-.l-footer h2 {
-    margin-top: 0;
-    margin-bottom: 1em;
-    padding-top: 2em;
-}
-.p-mailaddress {
-    font-size: 2em;
+.p-footer__title {
     margin: 0;
-    margin-bottom: 0.5em;
+    padding: 1rem 0;
 }
-.p-mailaddress a {
-    transition: opacity 0.3s;
-}
-.p-mailaddress a:hover {
-    opacity: 0.6;
+/* メールアドレス */
+.c-btn-mail {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
 
-}
-.c-btn-copy {
+    font-size: 1.5rem;
+    border: none;
+    background-color: transparent;
+    color: var(--bg-color);
+    transition: opacity 0.1s;
     cursor: pointer;
-    background-color: #f0f4f7;
-    color: #4a3d52;
-    transition: all 0.3s;
-    border-radius: 0.5em;
-    border: 2px solid transparent;
-    width: 5em;
-    height: 3em;
 }
-.c-btn-copy:hover {
-    background-color: #4a3d52;
-    color: #f0f4f7;
-    border-radius: 0.5em;
-    border: #f0f4f7 solid 2px;
+.c-btn-mail:hover {
+    opacity: 0.6;
 }
-.c-btn-copy.is-copied {
-    background-color: #4a3d52;
-    color: #f0f4f7;
-    border-radius: 0.5em;
-    border: #f0f4f7 solid 2px;
+.p-mailCopy, .p-mailCheck {
+    width: 1.5rem;
+    height: 1.5rem;
 }
-.c-btn-copy__text::before {
-    content: "Copy";
+.p-mailCopy {
+    display: inline-block;
 }
-.c-btn-copy.is-copied .c-btn-copy__text::before {
-    content: "Copied!";
+.p-mailCheck {
+    display: none;
 }
+/* JS　メールアドレスのコピー,iconの切り替え */
+.c-btn-mail.is-copied .p-mailCopy {
+    display: none;
+}
+.c-btn-mail.is-copied .p-mailCheck {
+    display: inline-block;
+}
+/* コピーライト */
 .c-copyright {
-    color: #c0c6c9;
-    margin-top: 2em;
+    color: var(--bg-color);
+    padding: 1rem 0;
 }
 
-/* index.html */
+/* -----index.html----- */
 .p-more-link {
     margin: 0 auto;
 }
 
 /*--hero--*/
 .l-hero {
-    margin: 0 auto 3em auto;
+    margin: 0 auto 2rem;/* bottomはmainのgap:3rem;と足し算して、mainのmarginと同じ数値に */
     filter: brightness(1.1);
     width: 90%;
-    max-width: 1200px;
-
 }
 .p-hero__image {
     border-radius: 20px;
@@ -224,7 +229,7 @@ a.c-btn:hover {
 .p-about-me__text {
     width: 70%;
 }
-.p-about-me__text h3 {
+.p-about-me__name {
     text-align: left;
 }
 .p-about-me__text p {
@@ -576,7 +581,7 @@ ul.p-project-context__list li.p-project-context__text::marker {
     .hamburger-icon {
         display: inline-block;
         width: 50px;
-        height: 44px;
+        height: 34px;
         position: relative;
         z-index: 120;
     }
@@ -593,7 +598,7 @@ ul.p-project-context__list li.p-project-context__text::marker {
         top: 0;
     }
     .hamburger-icon span:nth-of-type(2) {
-        top: 20px;
+        top: 15px;
     }
     .hamburger-icon span:nth-of-type(3) {
         bottom: 0;
@@ -656,13 +661,13 @@ ul.p-project-context__list li.p-project-context__text::marker {
         background-color: var(--accent-color);
     } /*JSでnav全画面後に色変更*/
     .hamburger-icon.is-active span:nth-of-type(1) {
-        transform: translateY(20px) rotate(45deg);
+        transform: translateY(15px) rotate(45deg);
     }
     .hamburger-icon.is-active span:nth-of-type(2) {
         opacity: 0;
     }
     .hamburger-icon.is-active span:nth-of-type(3) {
-        transform: translateY(-20px) rotate(-45deg);
+        transform: translateY(-15px) rotate(-45deg);
     }
     /* nav */
     .p-global-nav.is-active {
@@ -670,9 +675,18 @@ ul.p-project-context__list li.p-project-context__text::marker {
     }
 
     /*--fotter--*/
-    .p-mailaddress {
+    /* メールアドレス */
+    .c-btn-mail {
         font-size: 1.5rem;
-    }/*フッター メールアドレスのフォントサイズを小さく*/
+    }/* font-sizeを変更する際はここの数値を変更すること */
+
+    /*--main--*/
+    /* pagetop */
+    .c-btn-top {
+        width: 3rem;
+        height: 3rem;
+    }/* ボタンのサイズ変更の際はここの数値を変更すること */
+
     /*index*/
     /*--about-me--*/
     .p-about-me__image {
