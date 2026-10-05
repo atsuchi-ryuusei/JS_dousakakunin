@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/MyBaseStyle.css">
     <link rel="stylesheet" href="css/stylesheet.css">
-    <title>Works : Atsuchi Ryuusei Digital Portfolio</title>
+    <title>Atsuchi Ryuusei Digital Portfolio</title>
 </head>
 <body class="l-page" id="index">
     <header class="p-header" id="header">
@@ -41,21 +41,32 @@
         </div>
     </header>
     <main class="l-main">
-        <section class="l-section-container p-section p-works">
-            <h2>Works</h2>
-            <div class="l-works--grid">
-                <div class="l-works-card p-works-card">
-                    <a href="works/harikyuin.html">
-                        <img src="image/garuhi_harikyuuin_index.html.png" alt="ガルヒ鍼灸院ホームページ"
-                        class="l-works-card__image p-works-card__image">
-                    </a>
-                    <h3 class="p-works-card__title">ガルヒ鍼灸院</h3>
-                    <time class="c-item__time">2025/10/16</time>
-                    <a href="works/harikyuin.html" class="p-works-card__more">詳細➝</a>
-                </div>
-                <div class="l-works-card p-works-card">
-                </div>
+        <section class="l-hero p-hero">
+            <div class="p-hero__slider">
+                <img src="image/cape_sata.jpg" alt="" class="p-hero__image is-active">
+                <img src="image/bg_TornadoSplash.jpg" alt="" class="p-hero__image">
+                <img src="image/GUNPLA01.jpg" alt="" class="p-hero__image">
+                <img src="image/warhammer01.jpg" alt="" class="p-hero__image">
             </div>
+            <div class="p-hero__indicators">
+                <ul class="p-hero__indicators-list">
+                    <li class="p-hero__indicators-item">
+                        <button type="button" class="p-hero__indicator is-active" aria-label="1枚目のスライドへ"></button>
+                    </li>
+                    <li class="p-hero__indicators-item">
+                        <button type="button" class="p-hero__indicator" aria-label="2枚目のスライドへ"></button>
+                    </li>
+                    <li class="p-hero__indicators-item">
+                        <button type="button" class="p-hero__indicator" aria-label="3枚目のスライドへ"></button>
+                    </li>
+                    <li class="p-hero__indicators-item">
+                        <button type="button" class="p-hero__indicator" aria-label="4枚目のスライドへ"></button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="l-section-container p-section" class="p-hero__image">
+            
         </section>
         <a href="#header" class="c-btn-top" aria-label="ページ上部へ戻る"><i data-lucide="chevron-up" class="p-pageTop"></i></a>
     </main>
