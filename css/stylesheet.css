@@ -800,6 +800,10 @@ ul.p-project-context__list li.p-project-context__text::marker {
     .p-hero__controls {
         opacity: 0.5;
     }
+    .p-hero__btn--prev, .p-hero__btn--next {
+        width: 3rem;
+        height: 3rem;
+    }
     /*--about-me--*/
     .p-about-me__image {
         width: 10rem;
